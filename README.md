@@ -1,40 +1,72 @@
 # chili-display-module
 
-KiCad 10 projects for the **chilichip console display carriers**. Each carrier holds a bare display panel and copies the Waveshare 1.5" OLED module's footprint, so every screen plugs into the same spot on the main board ([vgc-zero-hardware #41](https://github.com/chili-chip/vgc-zero-hardware/issues/41)).
+KiCad 10 projects for the **chilichip console display modules**. Each module holds a bare display panel on a small board with castellated pads on its left and right edges. Both modules share one outline and pinout, so the screen is swappable ([vgc-zero-hardware #41](https://github.com/chili-chip/vgc-zero-hardware/issues/41)).
 
-Status: **v0.1.0, schematics done, parts placed, not routed yet.** ERC is clean on both boards. Not ordered or tested.
+The main board gets a hole under the module. The module rests on two narrow ledges, is soldered by its edge pads, and its bottom parts sit inside the hole. This saves the height of a pin header.
 
-| Folder | Panel | Controller | Extra parts on the carrier |
+Status: **v0.1.0, schematics and PCBs done, autorouted.** ERC and DRC are clean on both boards (DRC with schematic parity). Not ordered or tested.
+
+| Folder | Panel | Controller | Extra parts on the module |
 |---|---|---|---|
 | [`tft/`](tft/) | [EastRising ER-TFT1.44-3](https://www.buydisplay.com/square-1-44-inch-128x128-tft-lcd-display-4-wire-spi-st7735s), 1.44" TFT, 14-pin 0.5 mm FPC | ST7735S | Backlight switch |
 | [`oled/`](oled/) | [EastRising ER-OLED015-1C](https://www.buydisplay.com/serial-spi-1-5-inch-color-oled-display-128x128-graphic-module-ssd1351), 1.5" OLED, 30-pin 0.5 mm FPC | SSD1351 | 13 V boost for the panel |
 
-## What both carriers share
+| TFT, top | TFT, bottom | OLED, top | OLED, bottom |
+|:---:|:---:|:---:|:---:|
+| <img src="docs/images/tft-top.png" width="200"> | <img src="docs/images/tft-bottom.png" width="200"> | <img src="docs/images/oled-top.png" width="200"> | <img src="docs/images/oled-bottom.png" width="200"> |
+
+## What both modules share
 
 | | |
 |---|---|
-| Outline | 44.5 × 37 mm, same as the Waveshare module |
-| Holes | Four M2 holes at (2.5, 2.5), (2.5, 34.5), (42, 2.5), (42, 34.5), tied to GND |
-| Header J1 | 7 pins, 2.54 mm, at x = 42.49 mm, pin 1 at y = 26.12 mm, pin 7 at y = 10.88 mm |
-| Panel side | Top. The panel is centred between the holes |
-| Parts side | Bottom, facing the main board. One-sided JLCPCB assembly |
+| Outline | 40 × 37 mm, 1.6 mm FR-4, two layers |
+| Edge pads | 8 castellated half-holes, 2.54 mm pitch, 1 mm drill: 4 on the left edge (J1), 4 on the right edge (J3) |
+| Panel side | Top, centred on the board |
+| Parts side | Bottom. All parts stay inside x = 3…37 mm, so they fit in the main board hole. One-sided JLCPCB assembly |
 | FPC connector | Hirose FH12 (0.5 mm, 0.3 mm FPC), bottom side, opening at the bottom edge. The panel's tail wraps round the edge |
+| GND | Poured on both layers |
 
-Coordinates are top view, origin at the top-left corner, the same frame as `SSD1351_OLED_128x128_WAVESHARE` in vgc-zero-hardware.
+Coordinates are top view, origin at the module's top-left corner.
 
-### Header pinout
+### Edge pads
 
-The same as the Waveshare module, so no GPIO changes.
+| Pad | Edge, y (mm) | Net | RP2350 GPIO |
+|---|---|---|---|
+| J1.1 | Left, 22.31 | 3V3 | |
+| J1.2 | Left, 19.77 | GND | |
+| J1.3 | Left, 17.23 | `DISP_DIN` | GP27 |
+| J1.4 | Left, 14.69 | `DISP_CLK` | GP26 |
+| J3.1 | Right, 14.69 | `DISP_CS` | GP28 |
+| J3.2 | Right, 17.23 | `DISP_DC` | GP22 |
+| J3.3 | Right, 19.77 | `DISP_RST` | GP21 |
+| J3.4 | Right, 22.31 | GND | |
 
-| Pin | Net | RP2350 GPIO |
-|---|---|---|
-| 1 | 3V3 | |
-| 2 | GND | |
-| 3 | `DISP_DIN` | GP27 |
-| 4 | `DISP_CLK` | GP26 |
-| 5 | `DISP_CS` | GP28 |
-| 6 | `DISP_DC` | GP22 |
-| 7 | `DISP_RST` | GP21 |
+The signals and GPIOs are the same as the old Waveshare module, so the firmware pin map doesn't change.
+
+### Main board footprint
+
+[`chili-display-module.pretty/ChiliDisplayModule_Host.kicad_mod`](chili-display-module.pretty/ChiliDisplayModule_Host.kicad_mod) is the footprint for the main board. It has the 8 pads (numbered 1–8 in the order of the table above) and the hole on `Edge.Cuts`.
+
+```
+      0   2.5                      37.5  40   (mm)
+  -1  .    +------------------------+    .
+   0  +----|------------------------|----+   module outline
+      |    |                        |    |
+      |pad |       hole in the      | pad|   pads sit on the ledges,
+      |pad |       main board       | pad|   2.5 mm wide on each side
+      |pad |   (module parts here)  | pad|
+      |pad |                        | pad|
+  37  +----|------------------------|----+
+  38       +------------------------+         hole runs 1 mm past the module
+                                              at the top and bottom (FPC fold)
+```
+
+| | |
+|---|---|
+| Hole | 35 × 39 mm, x = 2.5…37.5, y = −1…38 |
+| Host pads | 2.6 × 1.6 mm, centred 0.3 mm outside the module edge, so the solder fillet forms on the edge |
+| Height above the main board | Module board 1.6 mm plus the panel (2.2 mm TFT, 1.6 mm OLED) |
+| Depth into the hole | Tallest bottom part: FH12 connector, 2.0 mm |
 
 ### Power follows `DISP_RST`
 
@@ -45,7 +77,7 @@ The console has no free GPIO, so each carrier uses the reset line as its on/off 
 | High (running) | Backlight on | 13 V boost on |
 | Low (reset, sleep) | Backlight off | Boost off |
 
-A 100 kΩ pull-down keeps everything off while the RP2350 boots. Sleep mode must hold `DISP_RST` low ([32blit-sdk #97](https://github.com/chili-chip/32blit-sdk/issues/97)). The firmware picks the driver at boot ([32blit-sdk #108](https://github.com/chili-chip/32blit-sdk/issues/108)).
+A 100 kΩ pull-down keeps everything off while the RP2350 boots. Each module needs only the five signals plus power, as before. Sleep mode must hold `DISP_RST` low ([32blit-sdk #97](https://github.com/chili-chip/32blit-sdk/issues/97)). The firmware picks the driver at boot ([32blit-sdk #108](https://github.com/chili-chip/32blit-sdk/issues/108)).
 
 ```mermaid
 flowchart LR
@@ -54,13 +86,11 @@ flowchart LR
     RST --> U1[OLED: U1 MT3608 EN] --> V[VOLED 13 V]
 ```
 
-## TFT carrier
-
-<img src="docs/images/tft-bottom.png" alt="TFT carrier, bottom side, placed" width="420">
+## TFT module
 
 | Ref | Part | Value | LCSC | Why |
 |---|---|---|---|---|
-| J1 | Pin header 1x07 | | | To the main board |
+| J1, J3 | Castellated edge pads | | part of the board | To the main board |
 | J2 | Hirose FH12-14S-0.5SH | | to pick | Panel FPC |
 | C1, C2 | Decoupling | 100 nF, 4.7 µF | C1525, C19666 | VCC and IOVCC |
 | R1 | Backlight resistor | 22 Ω | to pick | (3.3 − 3.0 V) / 22 Ω ≈ 14 mA. Max 18 mA at Vf 2.9 V, under the 20 mA limit |
@@ -69,9 +99,7 @@ flowchart LR
 
 Panel pins (datasheet 4.1): 1 NC, 2 GND, 3 K, 4 A, 5 GND, 6 RST, 7 DC, 8 SDA, 9 SCL, 10 VCC, 11 IOVCC, 12 CS, 13 GND, 14 NC. VCC and IOVCC both take 3.3 V (max 3.3 V).
 
-## OLED carrier
-
-<img src="docs/images/oled-bottom.png" alt="OLED carrier, bottom side, placed" width="420">
+## OLED module
 
 The panel circuit follows the reference circuit in the ER-OLED015-1C datasheet (1.6 Block Diagram). Interface is 4-wire SPI (BS0 = BS1 = 0). D0 is SCLK, D1 is SDIN, D3–D7, E/RD# and R/W# go to GND, D2 is left open.
 
@@ -98,10 +126,9 @@ When the boost is off, VOLED sits at about 3 V through L1 and D2 (normal for a n
 
 ## Still to do
 
-- [ ] Route both boards and pour GND, then DRC clean.
+- [ ] Review the autorouted boost loop on the OLED module (U1, L1, D2, C6): keep the switch node short before ordering.
 - [ ] Check with a real panel which way the FPC wraps and which side its contacts face. If pin 1 ends up on the wrong side, mirror the pin order.
-- [ ] Check the panels' visible area lines up with the Waveshare OLED (the shell window).
-- [ ] Check the height of the bottom parts against the space under the module.
+- [ ] Put the host footprint and hole on the main board ([vgc-zero-hardware](https://github.com/chili-chip/vgc-zero-hardware)) and line the shell window up with the panel.
 - [ ] Pick the LCSC parts marked "to pick".
 - [ ] JLCPCB export, CI and release, like the other module repos.
 
@@ -110,8 +137,13 @@ When the boost is off, VOLED sits at about 3 V through L1 and D2 (normal for a n
 ```sh
 kicad-cli sch erc tft/chili-display-tft.kicad_sch
 kicad-cli sch erc oled/chili-display-oled.kicad_sch
-kicad-cli pcb drc tft/chili-display-tft.kicad_pcb
+kicad-cli pcb drc --schematic-parity tft/chili-display-tft.kicad_pcb
+kicad-cli pcb drc --schematic-parity oled/chili-display-oled.kicad_pcb
 ```
+
+KiCad needs the standard symbol and footprint libraries. The castellated pads come from `chili-display-module.pretty`, which each project loads through its `fp-lib-table`.
+
+When ordering at JLCPCB, set **Castellated Holes: Yes**. ENIG is recommended for the fine-pitch FPC connector.
 
 ## Licence
 

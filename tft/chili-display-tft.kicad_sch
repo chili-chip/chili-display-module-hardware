@@ -11,7 +11,7 @@
 		(comment 3 "Company: chilichip")
 	)
 	(lib_symbols
-		(symbol "Connector_Generic:Conn_01x07"
+		(symbol "Connector_Generic:Conn_01x04"
 			(pin_names
 				(offset 1.016)
 				(hide yes)
@@ -22,7 +22,7 @@
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "J"
-				(at 0 10.16 0)
+				(at 0 5.08 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -31,8 +31,8 @@
 					)
 				)
 			)
-			(property "Value" "Conn_01x07"
-				(at 0 -10.16 0)
+			(property "Value" "Conn_01x04"
+				(at 0 -7.62 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -63,7 +63,7 @@
 					)
 				)
 			)
-			(property "Description" "Generic connector, single row, 01x07, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -96,38 +96,16 @@
 					)
 				)
 			)
-			(symbol "Conn_01x07_1_1"
+			(symbol "Conn_01x04_1_1"
 				(rectangle
-					(start -1.27 8.89)
-					(end 1.27 -8.89)
+					(start -1.27 3.81)
+					(end 1.27 -6.35)
 					(stroke
 						(width 0.254)
 						(type default)
 					)
 					(fill
 						(type background)
-					)
-				)
-				(rectangle
-					(start -1.27 7.747)
-					(end 0 7.493)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 5.207)
-					(end 0 4.953)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
 					)
 				)
 				(rectangle
@@ -174,19 +152,8 @@
 						(type none)
 					)
 				)
-				(rectangle
-					(start -1.27 -7.493)
-					(end 0 -7.747)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
 				(pin passive line
-					(at -5.08 7.62 0)
+					(at -5.08 2.54 0)
 					(length 3.81)
 					(name "Pin_1"
 						(effects
@@ -204,7 +171,7 @@
 					)
 				)
 				(pin passive line
-					(at -5.08 5.08 0)
+					(at -5.08 0 0)
 					(length 3.81)
 					(name "Pin_2"
 						(effects
@@ -222,7 +189,7 @@
 					)
 				)
 				(pin passive line
-					(at -5.08 2.54 0)
+					(at -5.08 -2.54 0)
 					(length 3.81)
 					(name "Pin_3"
 						(effects
@@ -240,7 +207,7 @@
 					)
 				)
 				(pin passive line
-					(at -5.08 0 0)
+					(at -5.08 -5.08 0)
 					(length 3.81)
 					(name "Pin_4"
 						(effects
@@ -250,183 +217,6 @@
 						)
 					)
 					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -2.54 0)
-					(length 3.81)
-					(name "Pin_5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -5.08 0)
-					(length 3.81)
-					(name "Pin_6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -7.62 0)
-					(length 3.81)
-					(name "Pin_7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Mechanical:MountingHole_Pad"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom no)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "H"
-				(at 0 6.35 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "MountingHole_Pad"
-				(at 0 4.445 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Mounting Hole with connection"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "mounting hole"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "MountingHole*Pad*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "MountingHole_Pad_0_1"
-				(circle
-					(center 0 1.27)
-					(radius 1.27)
-					(stroke
-						(width 1.27)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "MountingHole_Pad_1_1"
-				(pin input line
-					(at 0 -2.54 90)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1721,11 +1511,11 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector_Generic:Conn_01x07")
+		(lib_id "Connector_Generic:Conn_01x04")
 		(at 40.64 60.96 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "ecc14a82-06d5-5066-8b96-aabed9a93ade")
@@ -1737,7 +1527,7 @@
 				)
 			)
 		)
-		(property "Value" "Console header"
+		(property "Value" "Left edge"
 			(at 43.64 63.96 0)
 			(effects
 				(font
@@ -1745,7 +1535,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical"
+		(property "Footprint" "chili-display-module:Castellated_1x04_P2.54mm"
 			(at 40.64 60.96 0)
 			(effects
 				(font
@@ -1782,25 +1572,16 @@
 			)
 		)
 		(pin "1"
-			(uuid "e737e1ec-a6ad-4071-a7bf-71d6067b04c9")
+			(uuid "f087a466-18e9-48ca-9df5-1b740cf572ce")
 		)
 		(pin "2"
-			(uuid "5f1157c2-fd11-4a14-b9ca-a94b4a8a684b")
+			(uuid "375c6579-ca31-43a4-99c3-8f3efc41afa8")
 		)
 		(pin "3"
-			(uuid "1264d387-1518-4911-aff8-d3252a074243")
+			(uuid "736b4c3a-d6c9-4feb-bf57-d7700bc89970")
 		)
 		(pin "4"
-			(uuid "5f8d3b3e-7730-447d-b553-34ed5de537a2")
-		)
-		(pin "5"
-			(uuid "9b97e047-d8c3-4158-af00-a6325331962a")
-		)
-		(pin "6"
-			(uuid "f6fcfb62-97aa-4e8b-89f7-f9960cc9ce45")
-		)
-		(pin "7"
-			(uuid "725f3369-2fad-439c-9480-29032d50a53f")
+			(uuid "c8a1b9e9-c54e-4bfa-a57e-f90ba3e4953d")
 		)
 		(instances
 			(project "chili-display-tft"
@@ -1813,7 +1594,7 @@
 	)
 	(global_label "+3V3"
 		(shape passive)
-		(at 35.56 53.34 180)
+		(at 35.56 58.42 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1821,11 +1602,11 @@
 			)
 			(justify right)
 		)
-		(uuid "0e170ad4-642e-4720-bd1c-fe975e88982c")
+		(uuid "3d1fe5d3-069e-403e-bb40-a8e39bea642c")
 	)
 	(global_label "GND"
 		(shape passive)
-		(at 35.56 55.88 180)
+		(at 35.56 60.96 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1833,29 +1614,9 @@
 			)
 			(justify right)
 		)
-		(uuid "e3b5011d-f4b9-4d30-b4dc-d4e52ab470c9")
+		(uuid "f0f2ba1b-ecc4-4b99-abcb-b0726e229405")
 	)
 	(label "DISP_DIN"
-		(at 35.56 58.42 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "f4897b0a-b47f-47fb-8f0c-e8c60fc0d1ee")
-	)
-	(label "DISP_CLK"
-		(at 35.56 60.96 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "db6e2076-d881-44e9-ba7e-e83b960ab895")
-	)
-	(label "DISP_CS"
 		(at 35.56 63.5 180)
 		(effects
 			(font
@@ -1863,9 +1624,9 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "fc7ab77d-0e6a-4aaa-a738-889abef1328a")
+		(uuid "2a6ba258-0703-4da4-8c6a-7aa1862f574c")
 	)
-	(label "DISP_DC"
+	(label "DISP_CLK"
 		(at 35.56 66.04 180)
 		(effects
 			(font
@@ -1873,94 +1634,123 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "82ea59f3-a562-4eed-a143-0369322f2e1f")
+		(uuid "f7bd0d56-5966-4da1-b779-e3fa80bb4f39")
 	)
-	(label "DISP_RST"
-		(at 35.56 68.58 180)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x04")
+		(at 40.64 81.28 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "eedaebec-56e4-5a4a-9995-bde851e9ec47")
+		(property "Reference" "J3"
+			(at 43.64 78.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Right edge"
+			(at 43.64 84.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "chili-display-module:Castellated_1x04_P2.54mm"
+			(at 40.64 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 40.64 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 40.64 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 40.64 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "062453f9-5316-4f54-9cb5-0af8a7ee3a8e")
+		)
+		(pin "2"
+			(uuid "11e633a3-25fb-4523-bcb5-aefc41836cce")
+		)
+		(pin "3"
+			(uuid "66d917b0-10b9-48ac-b7c0-2ded304b782d")
+		)
+		(pin "4"
+			(uuid "1f61dd2e-1618-4f8e-ad78-8e7458b651da")
+		)
+		(instances
+			(project "chili-display-tft"
+				(path "/f0ca68f8-b7ba-5e96-a495-f6270dc52a58"
+					(reference "J3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "DISP_CS"
+		(at 35.56 78.74 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right bottom)
 		)
-		(uuid "757fdbfb-0ba4-482b-8b72-f1d01819c3ff")
+		(uuid "5fd4cde5-5711-42a9-b863-955aa41eab64")
 	)
-	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 241.3 35.56 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(uuid "8862d808-2320-5b7e-ac05-80205d88acdf")
-		(property "Reference" "H1"
-			(at 244.3 32.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+	(label "DISP_DC"
+		(at 35.56 81.28 180)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify right bottom)
 		)
-		(property "Value" "M2"
-			(at 244.3 38.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+		(uuid "3cbd8859-77ad-409d-90e1-f8b988084385")
+	)
+	(label "DISP_RST"
+		(at 35.56 83.82 180)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify right bottom)
 		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_Pad"
-			(at 241.3 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 241.3 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 241.3 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" ""
-			(at 241.3 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e7a3cd0c-7fea-497c-9c24-728ff4e07ce5")
-		)
-		(instances
-			(project "chili-display-tft"
-				(path "/f0ca68f8-b7ba-5e96-a495-f6270dc52a58"
-					(reference "H1")
-					(unit 1)
-				)
-			)
-		)
+		(uuid "41fadfe1-06df-4eeb-aefd-9ef344284c78")
 	)
 	(global_label "GND"
 		(shape passive)
-		(at 241.3 38.1 270)
+		(at 35.56 86.36 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1968,262 +1758,7 @@
 			)
 			(justify right)
 		)
-		(uuid "5f924cab-965f-4957-bb87-697824269042")
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 251.46 35.56 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(uuid "545044ea-26a3-541f-8b42-08dc0c9a25e0")
-		(property "Reference" "H2"
-			(at 254.46 32.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "M2"
-			(at 254.46 38.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_Pad"
-			(at 251.46 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 251.46 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 251.46 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" ""
-			(at 251.46 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "28ed6365-fb45-4d9c-85ec-c8cc46be9b35")
-		)
-		(instances
-			(project "chili-display-tft"
-				(path "/f0ca68f8-b7ba-5e96-a495-f6270dc52a58"
-					(reference "H2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(global_label "GND"
-		(shape passive)
-		(at 251.46 38.1 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "c6675581-f021-42e0-b9be-8015f9b33c48")
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 261.62 35.56 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(uuid "81f77ea3-b5da-5801-aef2-b6b8d1a8211d")
-		(property "Reference" "H3"
-			(at 264.62 32.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "M2"
-			(at 264.62 38.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_Pad"
-			(at 261.62 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 261.62 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 261.62 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" ""
-			(at 261.62 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "4ece8b0c-b7ae-4b21-b9c8-65d87144ac9d")
-		)
-		(instances
-			(project "chili-display-tft"
-				(path "/f0ca68f8-b7ba-5e96-a495-f6270dc52a58"
-					(reference "H3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(global_label "GND"
-		(shape passive)
-		(at 261.62 38.1 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "be029c31-f0c3-40de-ad9b-a78131e71e2e")
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 271.78 35.56 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(uuid "6bab898a-0f77-5040-a939-fe7895fd9a9b")
-		(property "Reference" "H4"
-			(at 274.78 32.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "M2"
-			(at 274.78 38.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_Pad"
-			(at 271.78 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 271.78 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 271.78 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" ""
-			(at 271.78 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "45f503fa-d7c4-4999-93dd-639c3ad25379")
-		)
-		(instances
-			(project "chili-display-tft"
-				(path "/f0ca68f8-b7ba-5e96-a495-f6270dc52a58"
-					(reference "H4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(global_label "GND"
-		(shape passive)
-		(at 271.78 38.1 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "ad68350e-b7af-4d42-9cf0-dfa5a4fa90cc")
+		(uuid "622f5d7a-d76f-4dc9-a4e3-54439e833cde")
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
@@ -2279,7 +1814,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "1540b7f3-5d72-4fe7-87d5-4783be2cd8a4")
+			(uuid "522b47d9-c5f2-4be4-9757-4ebcf6d57e20")
 		)
 		(instances
 			(project "chili-display-tft"
@@ -2300,7 +1835,7 @@
 			)
 			(justify right)
 		)
-		(uuid "51d534b7-ec74-4147-8342-a18edc379fe3")
+		(uuid "e6d8cd61-e2c5-4e2b-9dbe-a2e46d1db6da")
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
@@ -2356,7 +1891,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "85ed6ad0-0a41-4ece-a3db-a634ff0499b2")
+			(uuid "e90e72e1-fa38-4d58-acb2-ff7302ce3a2c")
 		)
 		(instances
 			(project "chili-display-tft"
@@ -2377,7 +1912,7 @@
 			)
 			(justify right)
 		)
-		(uuid "d83d8077-bf86-4b04-8d3d-542c351229f3")
+		(uuid "fdb0b52f-4a2e-4dbe-b8a7-c50460ad28e0")
 	)
 	(symbol
 		(lib_id "Connector_Generic_MountingPin:Conn_01x14_MountingPin")
@@ -2441,49 +1976,49 @@
 			)
 		)
 		(pin "1"
-			(uuid "17d3971c-f3d3-43bc-9c53-354f0431a897")
+			(uuid "858a1f72-d777-4938-8c05-d48d584d61c9")
 		)
 		(pin "2"
-			(uuid "05486511-c978-4204-9b7a-f705b61229e5")
+			(uuid "37d26e06-e039-44d2-bf63-bb8b3cba85d7")
 		)
 		(pin "3"
-			(uuid "9ec92498-c47e-47e6-b514-93040e821612")
+			(uuid "bd07901e-eaca-4256-b7c5-6bb72bdbb15b")
 		)
 		(pin "4"
-			(uuid "c0f7680c-6664-4977-a04e-c5f79017e51c")
+			(uuid "7905b802-5191-49f1-b005-ea95bac8ce77")
 		)
 		(pin "5"
-			(uuid "169c32d5-ef7e-4e14-aa1f-ee013243566f")
+			(uuid "91cfdb6d-4d4c-4479-ba8c-35ed305e620b")
 		)
 		(pin "6"
-			(uuid "dff892ee-e7ef-48d9-bea7-f2f1c75acc96")
+			(uuid "7e9d5516-824d-47e4-aa6a-c05a8a0239f8")
 		)
 		(pin "7"
-			(uuid "94b91e61-5171-4812-b97b-5270234718f9")
+			(uuid "dce506b5-381b-41ac-99e5-f14f3c7de176")
 		)
 		(pin "8"
-			(uuid "d7408df5-c272-4bcc-8bbf-209f4b5e53c5")
+			(uuid "b3c2ca1c-881e-48b5-aaa6-11fb07b0e67c")
 		)
 		(pin "9"
-			(uuid "7a53487a-1b2b-47a9-a649-febac714999a")
+			(uuid "a6d473b9-8be5-4562-bac6-9f657f7d9cb5")
 		)
 		(pin "10"
-			(uuid "80e2ce85-3698-4d4f-909c-a91b790131f3")
+			(uuid "1b528e02-71c7-404a-a404-f52450e43222")
 		)
 		(pin "11"
-			(uuid "1df0275d-8092-4658-882d-d0f6cd40d633")
+			(uuid "a19fe9fe-4324-459a-9d5c-83da9e5353b5")
 		)
 		(pin "12"
-			(uuid "bad82517-9567-4a4c-996d-e87599658f40")
+			(uuid "5356a312-2a27-45ed-98c8-42641555b966")
 		)
 		(pin "13"
-			(uuid "ba63ff63-0e3c-4ffd-a3f4-04ec6207f816")
+			(uuid "d0256407-a151-47a8-98f3-86d70cc27a91")
 		)
 		(pin "14"
-			(uuid "c9296068-92f2-4982-a85a-72ba1256c859")
+			(uuid "39353bd5-197a-40bf-a123-22fdcb8c4fce")
 		)
 		(pin "MP"
-			(uuid "3ad6c1f2-f283-4dd1-a395-1d11758a1605")
+			(uuid "0f65ebea-51b2-4f69-9652-5c076fa0b406")
 		)
 		(instances
 			(project "chili-display-tft"
@@ -2496,7 +2031,7 @@
 	)
 	(no_connect
 		(at 172.72 55.88)
-		(uuid "de8c2d8b-2d08-4d93-bbda-48d28f986f34")
+		(uuid "8b0f6b14-9002-4c23-8b42-a6567fb70d40")
 	)
 	(global_label "GND"
 		(shape passive)
@@ -2508,7 +2043,7 @@
 			)
 			(justify right)
 		)
-		(uuid "3bdb6cd7-da5d-4428-abc0-343a81725fb0")
+		(uuid "b97ad7fb-cf11-4e36-b807-ad1e085e1453")
 	)
 	(label "LED_K"
 		(at 172.72 60.96 180)
@@ -2518,7 +2053,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "a0de6928-ab5f-4252-8ffb-daf5947b30b2")
+		(uuid "eb6cc171-fc59-4c54-9592-b0e2bffd79c6")
 	)
 	(label "LED_A"
 		(at 172.72 63.5 180)
@@ -2528,7 +2063,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "ac1bd316-4f60-4096-a1fe-b27d78d192a2")
+		(uuid "560120b5-9049-4cd1-a8f7-c66afd7c1b27")
 	)
 	(global_label "GND"
 		(shape passive)
@@ -2540,7 +2075,7 @@
 			)
 			(justify right)
 		)
-		(uuid "bc3fef4a-17b4-4eba-8676-4bc1ae264499")
+		(uuid "d62351f2-fe32-400b-bae7-7c69e3f1880f")
 	)
 	(label "DISP_RST"
 		(at 172.72 68.58 180)
@@ -2550,7 +2085,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "1655aa5c-b33d-4a62-9cf1-5b37604d64fc")
+		(uuid "6983845d-1a5e-4d6b-bbf3-fce0f7f47ad3")
 	)
 	(label "DISP_DC"
 		(at 172.72 71.12 180)
@@ -2560,7 +2095,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "873a0576-1c23-40f0-80e6-814cd59a7041")
+		(uuid "c63a731d-7983-42ce-8d8b-25f169fd297c")
 	)
 	(label "DISP_DIN"
 		(at 172.72 73.66 180)
@@ -2570,7 +2105,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "1aef2774-e16d-4cd8-a591-5fa794d88ced")
+		(uuid "2c0a45bf-74bc-4bcd-a1e9-f910dabb47a7")
 	)
 	(label "DISP_CLK"
 		(at 172.72 76.2 180)
@@ -2580,7 +2115,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "d50f9c7c-73f2-4e60-b1ee-3cca7460fa51")
+		(uuid "3f4b9f6a-48cd-4fe1-9c15-f27842166ed4")
 	)
 	(global_label "+3V3"
 		(shape passive)
@@ -2592,7 +2127,7 @@
 			)
 			(justify right)
 		)
-		(uuid "9933a52e-ad9c-4d6f-b507-268d4fbb88ea")
+		(uuid "8575f0f7-494e-46a5-b750-49f73ad8feca")
 	)
 	(global_label "+3V3"
 		(shape passive)
@@ -2604,7 +2139,7 @@
 			)
 			(justify right)
 		)
-		(uuid "2d9301fd-e8a0-4065-bb5a-e4d2531ff16e")
+		(uuid "a6b017e8-9dd1-4238-a8dd-d0eb54407d3f")
 	)
 	(label "DISP_CS"
 		(at 172.72 83.82 180)
@@ -2614,7 +2149,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "d0917df4-39e2-4488-9170-21f7cab1b2c1")
+		(uuid "35593cde-aa36-4f24-80b3-d4a4813a1d7c")
 	)
 	(global_label "GND"
 		(shape passive)
@@ -2626,11 +2161,11 @@
 			)
 			(justify right)
 		)
-		(uuid "6cba1089-bab3-475b-9d6c-c0bc681a8dd6")
+		(uuid "db6f9f24-fd01-411f-881d-0f4a8333c1e6")
 	)
 	(no_connect
 		(at 172.72 88.9)
-		(uuid "ab186493-927d-4895-97fc-13040bc5dd5d")
+		(uuid "4d3af727-7e96-47ab-b384-22722e53eed6")
 	)
 	(global_label "GND"
 		(shape passive)
@@ -2642,7 +2177,7 @@
 			)
 			(justify right)
 		)
-		(uuid "b9e7ed6f-a1cb-447d-90fc-cecf5971c2f0")
+		(uuid "15b30cab-0d43-492d-bdfc-be9dc0e99180")
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -2706,10 +2241,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "d31e13a6-aa60-464f-9032-6c6df356188f")
+			(uuid "928917ca-099d-456e-b1ad-7c12684ec105")
 		)
 		(pin "2"
-			(uuid "69fdf152-33b8-4290-b150-b084bfbddee3")
+			(uuid "78c20dd1-87af-4156-a35d-d0213f584c71")
 		)
 		(instances
 			(project "chili-display-tft"
@@ -2730,7 +2265,7 @@
 			)
 			(justify left)
 		)
-		(uuid "db9c889b-8248-41ca-ad35-01025f74dd43")
+		(uuid "c7e8083c-b0d1-4518-9800-667f5d818adb")
 	)
 	(global_label "GND"
 		(shape passive)
@@ -2742,7 +2277,7 @@
 			)
 			(justify right)
 		)
-		(uuid "fd401801-e1ca-4310-b0c2-be9c2fd1692e")
+		(uuid "eaa8dd15-d9c6-48d8-97b1-073e233efe07")
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -2806,10 +2341,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "60e47bf0-940d-4d9c-a647-9fa79ab31515")
+			(uuid "df20c3ee-f54e-4b90-99a2-9ca2c2c67dac")
 		)
 		(pin "2"
-			(uuid "263a9fc2-55f7-40cc-a5cb-dcda35293df5")
+			(uuid "06b4689f-631c-4907-9a48-ed861fe707ad")
 		)
 		(instances
 			(project "chili-display-tft"
@@ -2830,7 +2365,7 @@
 			)
 			(justify left)
 		)
-		(uuid "a6a2ecc9-00fe-4b24-85c5-fdc9e5232663")
+		(uuid "2e7a6e1b-aafe-43e5-bd1e-d26fba49db48")
 	)
 	(global_label "GND"
 		(shape passive)
@@ -2842,7 +2377,7 @@
 			)
 			(justify right)
 		)
-		(uuid "e94b3669-b6af-4cab-8e4e-2cc880bd6845")
+		(uuid "cf592d3a-371e-4a0e-badd-51915cfa4167")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -2906,10 +2441,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "45deeaee-b493-491b-b783-1486851846e9")
+			(uuid "ab0f3fc7-cfda-4973-9cd7-8afdf40a300b")
 		)
 		(pin "2"
-			(uuid "71ddfafa-3fbe-4311-9e99-ff0acfccc631")
+			(uuid "574d16f2-2d62-4bc5-bb62-938405159060")
 		)
 		(instances
 			(project "chili-display-tft"
@@ -2930,7 +2465,7 @@
 			)
 			(justify left)
 		)
-		(uuid "76a1ad3c-40fb-499b-84e1-5c7f4d76de66")
+		(uuid "0d5f22e3-022e-436a-9913-ac89cb925eff")
 	)
 	(label "LED_A"
 		(at 116.84 67.31 270)
@@ -2940,7 +2475,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "1c817b6a-2890-466c-aa4b-ae244c771cd2")
+		(uuid "ccf88ca6-9b8d-482c-99e1-58e25d7681d5")
 	)
 	(symbol
 		(lib_id "Transistor_FET:Q_NMOS_GSD")
@@ -3004,13 +2539,13 @@
 			)
 		)
 		(pin "1"
-			(uuid "5e67a410-3fff-4a92-b97d-c98da4160ca4")
+			(uuid "6c438254-d248-4820-a40a-b20302623678")
 		)
 		(pin "2"
-			(uuid "444d4ee6-3996-4a77-be0e-ddacb0344e5e")
+			(uuid "7c233800-4ad7-460c-8027-8af0549ec64f")
 		)
 		(pin "3"
-			(uuid "aab16bf9-07be-4f46-b73e-d1cfac60f392")
+			(uuid "6cdc4e47-5743-4f19-8c1d-929042cf68f3")
 		)
 		(instances
 			(project "chili-display-tft"
@@ -3029,7 +2564,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "e54fc5dd-509b-4a1a-933a-83f5f38a478f")
+		(uuid "91ebea46-c393-49f0-91aa-76bf60dc39f6")
 	)
 	(global_label "GND"
 		(shape passive)
@@ -3041,7 +2576,7 @@
 			)
 			(justify right)
 		)
-		(uuid "8f590810-9208-45cf-8ec4-77cf7e12d229")
+		(uuid "ddab0204-f670-4a6e-be12-7b1536bb574e")
 	)
 	(label "LED_K"
 		(at 119.38 86.36 90)
@@ -3051,7 +2586,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "adeaf954-09ba-493c-aae0-791f0715d0f4")
+		(uuid "e1f80d94-90a7-4f0f-957f-32ce36fbf1df")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -3115,10 +2650,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "4e8bb6b6-8d13-4f99-a5e8-5ceac4f0e7ff")
+			(uuid "db608d5d-dd64-4cf8-b05b-417b115ebe78")
 		)
 		(pin "2"
-			(uuid "bf00846e-a9f1-41c5-bf52-df1573ad86a8")
+			(uuid "a826cc9d-d535-49ad-9ee0-312e940997c8")
 		)
 		(instances
 			(project "chili-display-tft"
@@ -3137,7 +2672,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "3bcbb6cf-5baf-47f5-ac6d-826cebd0ee24")
+		(uuid "8776bdd5-1ad8-44a7-b11c-3c8470768b23")
 	)
 	(global_label "GND"
 		(shape passive)
@@ -3149,7 +2684,7 @@
 			)
 			(justify right)
 		)
-		(uuid "30fd90e0-7e25-49a3-9e83-bb7a3e5c6420")
+		(uuid "cda7dfac-8ebd-4dfe-9cdd-6f59238c6f61")
 	)
 	(sheet_instances
 		(path "/"
