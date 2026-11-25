@@ -25,6 +25,7 @@ Status: **v0.1.0, schematics and PCBs done, autorouted.** Both modules are 28 ×
 | Parts side | Bottom. All parts stay inside x = 3…25 mm, so they fit in the main board hole. One-sided JLCPCB assembly |
 | FPC connector | Hirose FH12 (0.5 mm, 0.3 mm FPC), bottom side, opening at the bottom edge |
 | GND | Poured on both layers |
+| Test pads | 8 bare 1 mm pads on the top side, labelled on the silkscreen (see below). No assembly needed |
 
 Coordinates are top view, origin at the module's top-left corner.
 
@@ -42,6 +43,21 @@ Coordinates are top view, origin at the module's top-left corner.
 | J3.4 | Right, 14.81 | GND | |
 
 The signals and GPIOs are the same as the old Waveshare module, so the firmware pin map doesn't change.
+
+### Test pads
+
+Each module has a row of 8 test pads on its top side, for probing during bring-up before the panel goes on. They are bare copper, so they add no parts and no cost.
+
+| Pad | TFT | OLED |
+|---|---|---|
+| TP1 | 3V3 | 3V3 |
+| TP2 | GND | GND |
+| TP3 | `DISP_DIN` | `DISP_DIN` |
+| TP4 | `DISP_CLK` | `DISP_CLK` |
+| TP5 | `DISP_CS` | `DISP_CS` |
+| TP6 | `DISP_DC` | `DISP_DC` |
+| TP7 | `DISP_RST` | `DISP_RST` |
+| TP8 | BL: backlight cathode (`LED_K`) | 13V: panel supply (`VOLED`) |
 
 ### Main board footprint
 
