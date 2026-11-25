@@ -15,6 +15,10 @@ Status: **v0.1.0, schematics and PCBs done, autorouted.** Both modules are 28 ×
 |:---:|:---:|:---:|:---:|
 | <img src="docs/images/tft-top.png" width="200"> | <img src="docs/images/tft-bottom.png" width="200"> | <img src="docs/images/oled-top.png" width="200"> | <img src="docs/images/oled-bottom.png" width="200"> |
 
+| TFT, parts side | OLED, parts side |
+|:---:|:---:|
+| <img src="docs/images/tft-3d.png" width="400"> | <img src="docs/images/oled-3d.png" width="400"> |
+
 ## What both modules share
 
 | | |
