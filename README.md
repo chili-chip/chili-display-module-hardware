@@ -2,7 +2,7 @@
 
 KiCad 10 projects for the **chilichip console display modules**. Each module is a small board with the panel's FPC connector and power parts, soldered to the main board by castellated pads on its left and right edges. The panel itself is glued or screwed to the console frame, and its flex tail plugs into the module. Both modules share one outline and pinout, so the screen is swappable ([vgc-zero-hardware #41](https://github.com/chili-chip/vgc-zero-hardware/issues/41)).
 
-The main board gets a hole under the module. The module rests on two narrow ledges, is soldered by its edge pads, and its bottom parts sit inside the hole. This saves the height of a pin header.
+All parts are on the module's top side, so its bottom is flat. The module lies flat on the main board and is hand soldered by its edge pads, like a Raspberry Pi Pico.
 
 Status: **v0.1.0, schematics and PCBs done, autorouted.** Both modules are 28 × 22 mm. ERC and DRC are clean on both boards (DRC with schematic parity). Not ordered or tested.
 
@@ -25,9 +25,9 @@ Status: **v0.1.0, schematics and PCBs done, autorouted.** Both modules are 28 ×
 |---|---|
 | Outline | 28 × 22 mm, 1.6 mm FR-4, two layers |
 | Edge pads | 8 castellated half-holes, 2.54 mm pitch, 1 mm drill: 4 on the left edge (J1), 4 on the right edge (J3) |
-| Panel | Not on the module. It is mounted on the frame; its FPC tail wraps round the module's bottom edge into J2 |
-| Parts side | Bottom. All parts stay inside x = 3…25 mm, so they fit in the main board hole. One-sided JLCPCB assembly |
-| FPC connector | Hirose FH12 (0.5 mm, 0.3 mm FPC), bottom side, opening at the bottom edge |
+| Panel | Not on the module. It is mounted on the frame; its FPC tail plugs into J2 at the module's bottom edge |
+| Parts side | Top. The bottom is flat and lies on the main board. One-sided JLCPCB assembly |
+| FPC connector | Hirose FH12 (0.5 mm, 0.3 mm FPC), top side, opening at the bottom edge |
 | GND | Poured on both layers |
 | Test pads | 8 bare 1 mm pads on the top side, labelled on the silkscreen (see below). No assembly needed |
 
@@ -50,7 +50,7 @@ The signals and GPIOs are the same as the old Waveshare module, so the firmware 
 
 ### Test pads
 
-Each module has a row of 8 test pads on its top side, for probing during bring-up before the panel goes on. They are bare copper, so they add no parts and no cost.
+Each module has 8 test pads on its top side, for probing during bring-up before the panel goes on. They are bare copper, so they add no parts and no cost.
 
 | Pad | TFT | OLED |
 |---|---|---|
@@ -65,28 +65,25 @@ Each module has a row of 8 test pads on its top side, for probing during bring-u
 
 ### Main board footprint
 
-[`chili-display-module.pretty/ChiliDisplayModule_Host.kicad_mod`](chili-display-module.pretty/ChiliDisplayModule_Host.kicad_mod) is the footprint for the main board. It has the 8 pads (numbered 1–8 in the order of the table above) and the hole on `Edge.Cuts`.
+[`chili-display-module.pretty/ChiliDisplayModule_Host.kicad_mod`](chili-display-module.pretty/ChiliDisplayModule_Host.kicad_mod) is the footprint for the main board. It has the 8 pads (numbered 1–8 in the order of the table above) and the module outline on the silkscreen.
 
 ```
-      0   2.5                      25.5  28   (mm)
-  -1  .    +------------------------+    .
-   0  +----|------------------------|----+   module outline
-      |    |                        |    |
-      |pad |       hole in the      | pad|   pads sit on the ledges,
-      |pad |       main board       | pad|   2.5 mm wide on each side
-      |pad |   (module parts here)  | pad|
-      |pad |                        | pad|
-  22  +----|------------------------|----+
-  23       +------------------------+         hole runs 1 mm past the module
-                                              at the top and bottom (FPC fold)
+      0                                28   (mm)
+   0  +---------------------------------+   module outline
+      |                                 |
+     pad                               pad
+     pad   keep parts and bare copper  pad   pads stick out 1.6 mm
+     pad   out from under the module   pad   past each side edge
+     pad                               pad
+      |                                 |
+  22  +---------------------------------+
 ```
 
 | | |
 |---|---|
-| Hole | 23 × 24 mm, x = 2.5…25.5, y = −1…23 |
 | Host pads | 2.6 × 1.6 mm, centred 0.3 mm outside the module edge, so the solder fillet forms on the edge |
-| Height above the main board | 1.6 mm (the module board). The panel sits on the frame above |
-| Depth into the hole | Tallest bottom part: FH12 connector, 2.0 mm |
+| Under the module | No parts and no bare copper. Tracks and tented vias are fine |
+| Height above the main board | 3.6 mm: 1.6 mm board plus the FH12 connector (2.0 mm), the tallest part. The panel sits on the frame above |
 
 ### Power follows `DISP_RST`
 
@@ -148,8 +145,8 @@ When the boost is off, VOLED sits at about 3 V through L1 and D2 (normal for a n
 
 - [ ] Review the autorouted boost loop on the OLED module (U1, L1, D2, C6) before ordering.
 - [ ] Place the module on the main board where both panels' tails reach J2 (OLED tail: 14.35 mm past the panel edge, 15.5 mm wide).
-- [ ] Check with a real panel which way the FPC wraps and which side its contacts face. If pin 1 ends up on the wrong side, mirror the pin order.
-- [ ] Put the host footprint and hole on the main board ([vgc-zero-hardware](https://github.com/chili-chip/vgc-zero-hardware)) and line the shell window up with the panel.
+- [ ] Check with a real panel which way the FPC tail bends into J2 and which side its contacts face. If pin 1 ends up on the wrong side, mirror the pin order.
+- [ ] Put the host footprint on the main board ([vgc-zero-hardware](https://github.com/chili-chip/vgc-zero-hardware)) and line the shell window up with the panel.
 - [ ] Pick the LCSC parts marked "to pick".
 - [ ] JLCPCB export, CI and release, like the other module repos.
 
