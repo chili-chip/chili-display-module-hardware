@@ -127,7 +127,9 @@ The 2.0" ER-TFT020-3 has the same 14 pins in the same order as the ER-TFT1.44-3 
 
 Everything else is the same. VDD (2.5–3.3 V) and IOVDD (1.8–3.3 V) run at 3.3 V. The panel is 47.8 × 34.6 × 2.05 mm with a 40.8 × 30.6 mm active area. It mounts sideways (320 wide, 240 tall) on the frame. Its tail leaves from one short edge, so turn it so the tail exits on the left, away from the antenna. The panel has no TE pin. Brightness is 300 cd/m², and it is not sunlight readable.
 
-The firmware tells the two panels apart by their ID (ST7735S or ST7789), and runs the 2.0" panel at 320 × 240.
+J2 sits off centre on the TFT module, at x = 8.5 mm (module top-left origin, opening on the bottom edge), close to the J1 side. The 2.0" tail is not centred on the panel's short edge (its centre line is 13.55 mm from one long edge), and it folds back under the panel. With J2 off centre, the module can sit on the main board where the folded tail reaches it and its pads stay clear of the RP2350 board's USB-C slots. The castellated pads and outline are unchanged.
+
+Firmware: the `dbi_st7789_scaled` driver ([32blit-sdk #114](https://github.com/chili-chip/32blit-sdk/pull/114)) shows today's 128 × 128 games scaled to 240 × 240 in the middle of the panel. Picking the driver from the panel's ID at boot is [32blit-sdk #108](https://github.com/chili-chip/32blit-sdk/issues/108).
 
 ## OLED module
 
