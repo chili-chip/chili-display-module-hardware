@@ -1,4 +1,0 @@
-(fp_lib_table
-	(version 7)
-	(lib (name "chili-display-module") (type "KiCad") (uri "${KIPRJMOD}/../chili-display-module.pretty") (options "") (descr "Display module footprints"))
-)
