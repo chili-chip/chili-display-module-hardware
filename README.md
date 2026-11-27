@@ -9,6 +9,7 @@ Status: **v0.1.0, schematics and PCBs done, autorouted.** Both modules are 28 ×
 | Folder | Panel | Controller | Extra parts on the module |
 |---|---|---|---|
 | [`tft/`](tft/) | [EastRising ER-TFT1.44-3](https://www.buydisplay.com/square-1-44-inch-128x128-tft-lcd-display-4-wire-spi-st7735s), 1.44" TFT, 14-pin 0.5 mm FPC | ST7735S | Backlight switch |
+| [`tft/`](tft/), 2.0" variant | [EastRising ER-TFT020-3](https://www.buydisplay.com/2-inch-240x320-ips-tft-lcd-display-with-connector-fpc), 2.0" IPS 320 × 240 (mounted sideways), 14-pin 0.5 mm FPC | ST7789 | Same board, R1 = 6.8 Ω |
 | [`oled/`](oled/) | [EastRising ER-OLED015-1C](https://www.buydisplay.com/serial-spi-1-5-inch-color-oled-display-128x128-graphic-module-ssd1351), 1.5" OLED, 30-pin 0.5 mm FPC | SSD1351 | 13 V boost for the panel |
 
 | TFT, top | TFT, bottom | OLED, top | OLED, bottom |
@@ -115,6 +116,18 @@ flowchart LR
 | R2 | Gate pull-down | 100 kΩ | C25741 | Backlight off while RST floats |
 
 Panel pins (datasheet 4.1): 1 NC, 2 GND, 3 K, 4 A, 5 GND, 6 RST, 7 DC, 8 SDA, 9 SCL, 10 VCC, 11 IOVCC, 12 CS, 13 GND, 14 NC. VCC and IOVCC both take 3.3 V (max 3.3 V).
+
+### 2.0" variant (ER-TFT020-3)
+
+The 2.0" ER-TFT020-3 has the same 14 pins in the same order as the ER-TFT1.44-3 (its datasheet 4.1: 1 NC, 2 GND, 3 LED−, 4 LED+, 5 GND, 6 /RESET, 7 RS, 8 SDA, 9 SCK, 10 VDD, 11 IOVDD, 12 CS, 13 GND, 14 NC). So the same TFT module drives it. Only R1 changes:
+
+| Ref | 1.44" panel | 2.0" panel | Why |
+|---|---|---|---|
+| R1 | 22 Ω | 6.8 Ω | The 2.0" backlight is 3 LEDs in parallel: 45 mA typical, 60 mA max, Vf 3.0 V. (3.3 − 3.0 V) / 6.8 Ω ≈ 44 mA. At Vf 2.9 V it is 59 mA, still under the limit. About 13 mW in R1, fine for 0402 |
+
+Everything else is the same. VDD (2.5–3.3 V) and IOVDD (1.8–3.3 V) run at 3.3 V. The panel is 47.8 × 34.6 × 2.05 mm with a 40.8 × 30.6 mm active area. It mounts sideways (320 wide, 240 tall) on the frame. Its tail leaves from one short edge, so turn it so the tail exits on the left, away from the antenna. The panel has no TE pin. Brightness is 300 cd/m², and it is not sunlight readable.
+
+The firmware tells the two panels apart by their ID (ST7735S or ST7789), and runs the 2.0" panel at 320 × 240.
 
 ## OLED module
 
